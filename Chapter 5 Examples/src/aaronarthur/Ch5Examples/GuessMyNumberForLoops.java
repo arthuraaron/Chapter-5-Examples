@@ -177,7 +177,7 @@ public class GuessMyNumberForLoops {
 			
 			// Start while loop
 			int lives = initLives;
-			for (lives = initLives ; lives > 0 && points >= 0 ; lives = initLives) {
+			for (lives = initLives ; lives > 0 && points >= 0 ; lives -= 1) {
 
 				// Print amount of lives and money
 				System.out.println("Lives: " + lives);
@@ -223,7 +223,6 @@ public class GuessMyNumberForLoops {
 				}
 				else if (compGuess < randNum) {
 					System.out.println("\nYou guessed too low." );
-					lives -= 1;
 					compMin = compGuess;
 					if (lives == 0) {
 						System.out.println("You ran out of lives. ");
@@ -233,7 +232,6 @@ public class GuessMyNumberForLoops {
 				else if (compGuess > randNum) {
 					System.out.println("\nYou guessed too high." );
 					compMax = compGuess;
-					lives -= 1;
 					if (lives == 0) {
 						System.out.println("You ran out of lives. ");
 					}
