@@ -5,7 +5,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 // Aaron Arthur 10/18 Number guessing game
 
-public class GuessMyNumberWhileLoops {
+public class GuessMyNumberDoLoops {
 
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
@@ -18,7 +18,7 @@ public class GuessMyNumberWhileLoops {
 		
 		// Create menu for program
 		int choice = 0;
-		do {
+		while (choice != 5) {
 		System.out.print("Welcome to the Guess my Number Game!\n"
 				+ "1: Play game\n"
 				+ "2: Options\n"
@@ -38,7 +38,7 @@ public class GuessMyNumberWhileLoops {
 			
 			// Start betting
 			int betCondition = 0;
-			do {
+			while (betCondition == 0) {
 				System.out.println("Points: " + points);
 				System.out.print("How many points would you like to wager?: ");
 				wager = input.nextInt();
@@ -52,11 +52,11 @@ public class GuessMyNumberWhileLoops {
 					
 				}
 				
-			} while (betCondition == 0);
+			}
 			
 			// Start while loop
 			int lives = initLives;
-			do {
+			while (lives > 0 && points >= 0) {
 
 				// Print amount of lives and money
 				System.out.println("Lives: " + lives);
@@ -110,12 +110,12 @@ public class GuessMyNumberWhileLoops {
 					
 				}
 			
-			} while (lives > 0 && points >= 0);
+			}	
 			
 		}
 		else if (choice == 2) {
 			int optionsChoice = 0;
-			do {
+			while (optionsChoice != 4) {
 				System.out.print("\nOptions:\n"
 						+ "1: Change range of number\n"
 						+ "2: Change number of lives\n"
@@ -156,7 +156,7 @@ public class GuessMyNumberWhileLoops {
 					System.out.println("\nYou have entered an invalid number. Please try again.");
 				}
 			
-			} while (optionsChoice != 4);
+			}
 			
 		}
 		else if (choice == 3) {
@@ -179,7 +179,7 @@ public class GuessMyNumberWhileLoops {
 			
 			// Start while loop
 			int lives = initLives;
-			do {
+			while (lives > 0 && points >= 0) {
 
 				// Print amount of lives and money
 				System.out.println("Lives: " + lives);
@@ -242,7 +242,7 @@ public class GuessMyNumberWhileLoops {
 					
 				}
 				
-			} while (lives > 0 && points >= 0);
+			}
 					
 		}
 		else if (choice == 5) {
@@ -255,7 +255,7 @@ public class GuessMyNumberWhileLoops {
 			
 		}
 		
-		} while (choice != 5);
+		}
 		
 	}
 
